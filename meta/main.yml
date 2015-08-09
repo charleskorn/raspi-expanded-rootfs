@@ -1,0 +1,9 @@
+---
+galaxy_info:
+  author: Charles Korn
+  description: An Ansible role for automatically expanding the root filesystem of a Raspberry Pi to fill the available space.
+  license: MIT
+  min_ansible_version: 1.2
+  categories:
+  - system
+dependencies: []
