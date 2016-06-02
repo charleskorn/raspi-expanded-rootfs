@@ -23,3 +23,6 @@
 - name: Disable raspi-config
   script: scripts/disable-raspi-config.sh
   sudo: yes
+  when: fs_expanded.stat.exists == False
+
+- meta: flush_handlers
