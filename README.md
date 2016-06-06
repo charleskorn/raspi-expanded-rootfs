@@ -46,9 +46,9 @@ Author Information
 ------------------
 
 Created by Charles Korn ([me@charleskorn.com](me@charleskorn.com)).
-
+Extended by Emmanouil Kampitakis ([info@kampitakis.de](info@kampitakis.de))
 
 Contributing
 ------------
 
-Submit issues and pull requests on GitHub at [https://github.com/charleskorn/raspi-expanded-rootfs](https://github.com/charleskorn/raspi-expanded-rootfs).
+Submit issues and pull requests on GitHub at [https://github.com/madonius/raspi-expanded-rootfs](https://github.com/madonius/raspi-expanded-rootfs).
