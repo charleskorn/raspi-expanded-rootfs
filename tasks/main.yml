@@ -1,24 +1,16 @@
 ---
-- name: Create Ansible temp directory
-  file: path=/var/ansible state=directory
-  become: yes
-
-- name: Check if filesystem has already been expanded
-  stat: path=/var/ansible/fs_expanded
-  register: fs_expanded
+- name: Check unpartitioned space
+  shell: parted /dev/mmcblk0 unit gb print free | grep 'Free Space' | tail -n1 | awk '{print $3}'
+  register: unpartitioned
+  changed_when: false
 
 - name: Expand filesystem to fill disk
   command: raspi-config --expand-rootfs
   become: yes
-  when: fs_expanded.stat.exists == False
+  when: unpartitioned.stdout != "0.00GB"
   notify:
   - Restart
   - Wait for restart to finish
-
-- name: Mark filesystem as expanded
-  file: path=/var/ansible/fs_expanded state=touch mode="u=r,g=r,o=r"
-  become: yes
-  when: fs_expanded.stat.exists == False
 
 - name: Disable raspi-config
   script: scripts/disable-raspi-config.sh
