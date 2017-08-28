@@ -8,8 +8,6 @@ Notes
 
 * This role internally uses `raspi-config` to expand the root filesystem, so the behaviour is the same as running that tool. For example, the operation is non-destructive.
 
-* `ansible_port` must be set inside inventory file.
-
 * This role currently tests for the existence of the file `/var/ansible/fs_expanded` to determine if the filesystem has already been expanded or not.
 
   If you've already manually expanded the filesystem and then run this role anyway, the first time the role runs it will still go through the process of expanding the filesystem,
@@ -20,7 +18,9 @@ Notes
 Requirements
 ------------
 
-Requires `raspi-config` to be installed. (It's installed by default on Raspbian.)
+* Requires `raspi-config` to be installed. (It's installed by default on Raspbian.)
+
+* `ansible_port` must be set inside inventory file.
 
 Role Variables
 --------------
