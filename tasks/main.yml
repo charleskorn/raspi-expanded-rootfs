@@ -12,9 +12,4 @@
   - Restart
   - Wait for restart to finish
 
-- name: Disable raspi-config
-  script: scripts/disable-raspi-config.sh
-  become: yes
-  when: fs_expanded.stat.exists == False
-
 - meta: flush_handlers
