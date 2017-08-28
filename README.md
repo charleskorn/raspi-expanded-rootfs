@@ -20,7 +20,11 @@ Requirements
 
 * Requires `raspi-config` to be installed. (It's installed by default on Raspbian.)
 
-* `ansible_port` must be set inside inventory file.
+* `ansible_port` must be set inside inventory file. Inventory example:
+```
+# For initial setup of Raspbian
+pi ansible_host=192.168.0.100 ansible_user=pi ansible_ssh_pass=raspberry ansible_ssh_extra_args='-o StrictHostKeyChecking=no' ansible_port=22
+```
 
 Role Variables
 --------------
