@@ -40,6 +40,7 @@ Example Playbook
 ----------------
 
     - hosts: servers
+      become: yes
       roles:
         - role: raspi-expanded-rootfs
 
