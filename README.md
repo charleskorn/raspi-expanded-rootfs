@@ -41,7 +41,8 @@ Example Playbook
 
     - hosts: servers
       roles:
-        - role: raspi-expanded-rootfs
+        - role: charleskorn.raspi-expanded-rootfs
+          become: yes
 
 License
 -------
