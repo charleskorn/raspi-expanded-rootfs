@@ -6,6 +6,8 @@ An Ansible role for automatically expanding the root filesystem of a Raspberry P
 Notes
 ------------
 
+* Take note that since [Raspbian 2016-05-10](https://downloads.raspberrypi.org/raspbian/release_notes.txt): `File system automatically expanded on first boot`.
+
 * This role internally uses `raspi-config` to expand the root filesystem, so the behaviour is the same as running that tool. For example, the operation is non-destructive.
 
 Requirements
