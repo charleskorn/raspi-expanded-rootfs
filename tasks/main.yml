@@ -8,8 +8,9 @@
 - name: Expand filesystem to fill disk
   command: raspi-config --expand-rootfs
   when: unpartitioned.stdout != "0.00GB"
-  notify:
-  - Restart
-  - Wait for restart to finish
+
+- name: Reboot after file system change
+  reboot:
+  when: unpartitioned.stdout != "0.00GB"
 
 - meta: flush_handlers
